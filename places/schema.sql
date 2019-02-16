@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS places;
+
+CREATE VIRTUAL TABLE places
+USING FTS5(document);
