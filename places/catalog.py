@@ -1,6 +1,7 @@
 from flask import (
-    Blueprint, request
+    Blueprint, request, make_response
 )
+from places.db import get_db
 
 bp = Blueprint('catalog', __name__, url_prefix='/catalog')
 
@@ -17,5 +18,27 @@ def load():
 
 @bp.route('/search')
 def search():
-    pattern = request.args.get('q', 'NO_PATTERN')
-    return f'Searching by {pattern}.'
+    pattern = request.args.get('q', '')
+    limit = request.args.get('limit', 100)
+    db = get_db()
+    results = db.execute(
+        """
+        SELECT json FROM places
+        WHERE document MATCH ?
+        ORDER BY rank DESC
+        LIMIT ?;
+        """,
+        (fts_pattern(pattern), limit)
+    ).fetchall()
+
+    resp = make_response(
+        "[{}]".format(','.join([doc['json'] for doc in results]))
+    )
+    resp.headers['Content-Type'] = 'application/json'
+    return resp
+
+
+def fts_pattern(pattern):
+    fts = [f'{patt}*' for patt in pattern.split(' ')]
+    print(fts)
+    return ' '.join(fts)
