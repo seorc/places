@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from . import catalog
 from . import db
+from . import loader
 
 
 def create_app(test_config=None):
@@ -24,5 +25,6 @@ def create_app(test_config=None):
 
     # Setup database access.
     db.init_app(app)
+    loader.init_app(app)
 
     return app
