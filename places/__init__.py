@@ -14,6 +14,8 @@ def create_app(test_config=None):
 
     if test_config is None:
         app.config.from_envvar('PLACES_CFG', silent=True)
+    else:
+        app.config.from_mapping(test_config)
 
     try:
         os.makedirs(app.instance_path)
