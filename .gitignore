@@ -1,2 +1,4 @@
 __pycache__
 instance/
+/tags
+places.egg-info/

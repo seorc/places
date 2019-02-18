@@ -1,0 +1,2 @@
+include places/schema.sql
+global-exclude *.pyc
