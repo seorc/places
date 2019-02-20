@@ -46,8 +46,48 @@ def to_json(row):
         ('d_ciudad', 'city'),
         ('d_zona', 'zone'),
         ('c_estado', 'state_code'),
+        ('iso', 'state_iso_code'),
     ]
+    row['iso'] = state_to_iso(row['c_estado'])
     return json.dumps(dict([(m[1], row[m[0]]) for m in mappings]))
+
+
+def state_to_iso(state_code):
+    mappings = {
+        '01': 'AGU',
+        '02': 'BCN',
+        '03': 'BCS',
+        '04': 'CAM',
+        '07': 'CHP',
+        '08': 'CHH',
+        '09': 'CMX',
+        '05': 'COA',
+        '06': 'COL',
+        '10': 'DUR',
+        '11': 'GUA',
+        '12': 'GRO',
+        '13': 'HID',
+        '14': 'JAL',
+        '15': 'MEX',
+        '16': 'MIC',
+        '17': 'MOR',
+        '18': 'NAY',
+        '19': 'NLE',
+        '20': 'OAX',
+        '21': 'PUE',
+        '22': 'QUE',
+        '23': 'ROO',
+        '24': 'SLP',
+        '25': 'SIN',
+        '26': 'SON',
+        '27': 'TAB',
+        '28': 'TAM',
+        '29': 'TLA',
+        '30': 'VER',
+        '31': 'YUC',
+        '32': 'ZAC',
+    }
+    return 'MX-{}'.format(mappings[state_code])
 
 
 @click.command('load-file')

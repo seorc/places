@@ -28,5 +28,6 @@ def test_to_json(sample_file_row):
         'city': sample_file_row['d_ciudad'],
         'zone': sample_file_row['d_zona'],
         'state_code': sample_file_row['c_estado'],
+        'state_iso_code': 'MX-CMX',
     })
     assert to_json(sample_file_row) == expected
