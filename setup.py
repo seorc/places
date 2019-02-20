@@ -11,8 +11,9 @@ setup(
     ],
     extras_require={
         'test': [
-            'pytest',
             'coverage',
+            'flake8',
+            'pytest',
         ]
     }
 )
