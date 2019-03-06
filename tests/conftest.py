@@ -51,8 +51,15 @@ def app():
 
 
 @pytest.fixture
-def client(app):
-    return app.test_client()
+def preloaded_app(app, test_file_path):
+    with app.app_context():
+        load_file(test_file_path)
+    yield app
+
+
+@pytest.fixture
+def client(preloaded_app):
+    return preloaded_app.test_client()
 
 
 @pytest.fixture

@@ -18,7 +18,7 @@ def load():
 
 @bp.route('/search')
 def search():
-    pattern = request.args.get('q', '')
+    pattern = request.args.get('q', '').strip()
     limit = request.args.get('limit', 100)
     db = get_db()
     results = db.execute(
