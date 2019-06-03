@@ -39,8 +39,8 @@ def join_row(row):
 def to_json(row):
     mappings = [
         ('d_codigo', 'postal_code'),
-        ('d_asenta', 'neighborhood'),
-        ('d_tipo_asenta', 'neighborhood_type'),
+        ('d_asenta', 'place'),
+        ('d_tipo_asenta', 'place_type'),
         ('D_mnpio', 'municipality'),
         ('d_estado', 'state'),
         ('d_ciudad', 'city'),

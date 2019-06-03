@@ -15,3 +15,7 @@ municipalities, estates, etc.) with the power of full text search.
    (https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx).
 6. Perform a search: `curl GET
    "localhost:5000/catalog/search?q=tlalpu+mich&limit=3" | jq`
+
+## Testing
+
+Run `pytest` or `coverage run -m pytest` for coverage revision.

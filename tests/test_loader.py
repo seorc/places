@@ -21,8 +21,8 @@ def test_join_row(sample_file_row):
 def test_to_json(sample_file_row):
     expected = json.dumps({
         'postal_code': sample_file_row['d_codigo'],
-        'neighborhood': sample_file_row['d_asenta'],
-        'neighborhood_type': sample_file_row['d_tipo_asenta'],
+        'place': sample_file_row['d_asenta'],
+        'place_type': sample_file_row['d_tipo_asenta'],
         'municipality': sample_file_row['D_mnpio'],
         'state': sample_file_row['d_estado'],
         'city': sample_file_row['d_ciudad'],
