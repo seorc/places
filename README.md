@@ -1,7 +1,7 @@
 # Places
 
 A small service to find data about locations in México (colonies,
-municipalities, estates, etc.) with the power of full text search.
+municipalities, states, etc.) with the power of full text search.
 
 ## Quick start
 
