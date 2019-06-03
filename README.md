@@ -1,6 +1,7 @@
 # Places
 
-A small service to find neighborhoods with the power of full text search.
+A small service to find data about locations in México (colonies,
+municipalities, estates, etc.) with the power of full text search.
 
 ## Quick start
 
