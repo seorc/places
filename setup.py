@@ -9,6 +9,7 @@ setup(
     install_requires=[
         'flask',
         'click',
+        'unidecode',
     ],
     extras_require={
         'test': [
