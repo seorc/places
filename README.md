@@ -5,8 +5,7 @@ municipalities, states, etc.) with the power of full text search.
 
 ## Quick start
 
-1. Install the dependencies (preferably in a virtualenv): `pip install
-   requirements.txt`
+1. Install the dependencies (preferably in a virtualenv): `pip install -e .`
 2. Setup the application environment: `export FLASK_APP=places`.
 3. Launch the flask application: `flask run`.
 4. Initialize the DB: `flask init-db`
@@ -18,4 +17,5 @@ municipalities, states, etc.) with the power of full text search.
 
 ## Testing
 
-Run `pytest` or `coverage run -m pytest` for coverage revision.
+1. Install the test extras  `pip install -e .[test]`.
+2. Run `pytest` or `coverage run -m pytest` for coverage revision.
